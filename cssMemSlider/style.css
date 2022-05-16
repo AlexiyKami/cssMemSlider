@@ -65,7 +65,7 @@ main {
   margin: 0 auto;
   padding: 1vh 1vw;
   width: 50vw;
-  height: 67vh;
+  height: 40vw;
   background-color: var(--color-slider);
   border: 0.5rem solid #587bdd;
   border-radius: 1rem;
@@ -75,9 +75,9 @@ main {
 .slider > .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 12vh;
-  width: 100%;
+  height: 12vw;
+  width: 47vw;
+  height: 10vw;
   font-size: 1.5rem;
 }
 
@@ -86,15 +86,18 @@ main {
   justify-content: flex-start;
   align-items: center;
   width: 47vw;
-  height: 52vh;
+  height: 26.4vw;
   overflow: hidden;
   gap: 2vw;
   border-radius: 1rem;
 }
 
 .control-panel {
+  margin-top: 3vw;
   margin-left: 2vw;
+  height: 2rem;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -125,7 +128,7 @@ main {
 .titles {
   height: 100%;
   gap: 5rem;
-  margin-top: 7vh;
+  margin-top: 3vw;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -133,10 +136,12 @@ main {
 
 .mem-titles {
   height: 3em;
+  padding-bottom: 5%;
   opacity: 0;
   word-break:keep-all;
   transition: all 1s;
   color: var(--color-text);
+  user-select: none;
 }
 
 .slides {
@@ -145,12 +150,14 @@ main {
 
 .slides img {
   width: 47vw;
-  height: 50vh;
+  height: 26.4vw;
   border-radius: 1rem;
 }
 
 input[type='radio'] {
-  display: none;
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 #radio1:checked ~ .img-wrapper .slide1 {
@@ -171,11 +178,11 @@ input[type='radio'] {
 }
 #radio2:checked ~ .container .mem-title2 {
   opacity: 1;
-  margin-top: -7rem;
+  margin-top: -8rem;
 }
 #radio3:checked ~ .container .mem-title3 {
   opacity: 1;
-  margin-top: -14rem;
+  margin-top: -16.5rem;
 }
 #radio4:checked ~ .container .mem-title4 {
   opacity: 1;
@@ -199,27 +206,33 @@ footer {
 @media (max-width: 768px) {
   .slider {
     width: 67vw;
-    height: 47vh;
+    height: 50vw;
+  }
+
+  .control-panel {
+    margin-top: 0;
   }
 
   .titles {
     width: 52vw;
-    margin-top: 2vh;
+    margin-top: 0;
     order: 2;
   }
 
   .slider > .container {
+    align-items: center;
     flex-direction: column;
     font-size: 1rem;
+    width: 52vw;
   }
 
   .img-wrapper {
     width: 52vw;
-    height: 30vh;
+    height: 29.25vw;
   }
   .slides img {
     width: 52vw;
-    height: 28vh;
+    height: 29.25vw;
   }
 
   .control-panel {
@@ -233,9 +246,6 @@ footer {
     margin: -0.2vw;
   }
 
-  #radio1:checked ~ .img-wrapper .slide1 {
-    margin-left: 0vw;
-  }
   #radio2:checked ~ .img-wrapper .slide1 {
     margin-left: -54vw;
   }
@@ -246,29 +256,24 @@ footer {
     margin-left: -162vw;
   }
 
-  #radio1:checked ~ .container .mem-title1 {
-    opacity: 1;
-  }
+
   #radio2:checked ~ .container .mem-title2 {
     opacity: 1;
-    margin-top: -6.5rem;
+    margin-top: -7.5rem;
   }
   #radio3:checked ~ .container .mem-title3 {
     opacity: 1;
-    margin-top: -13rem;
+    margin-top: -15rem;
   }
   #radio4:checked ~ .container .mem-title4 {
     opacity: 1;
-    margin-top: -22rem;
+    margin-top: -22.9rem;
   }
 }
 
 @media (max-width: 600px) {
-  .slider {
-    height: 45vh;
-  }
   .slider > .container {
-    height: 9vh;
+    height: 12vw;
   }
   .titles {
     margin-top: 1vh;
@@ -278,7 +283,7 @@ footer {
 @media (max-width: 480px) {
   .slider {
     width: 85vw;
-    height: 45vh;
+    height: 70vw;
   }
 
   .titles {
@@ -291,12 +296,17 @@ footer {
   }
 
   .slides img {
-    height: 31vh;
+    height: 42.1875vw;
     width: 75vw;
   }
   .img-wrapper {
-    height: 31vh;
+    height: 42.1875vw;
     width: 75vw;
+  }
+
+  .slider > .container {
+    width: 75vw;
+    height: 20vw;
   }
 
   #radio1:checked ~ .img-wrapper .slide1 {
@@ -311,6 +321,12 @@ footer {
   #radio4:checked ~ .img-wrapper .slide1 {
     margin-left: -231vw;
   }
+
+  #radio4:checked ~ .container .mem-title4 {
+    opacity: 1;
+    margin-top: -24rem;
+  }
+
   footer {
     justify-content: center;
   }
@@ -318,7 +334,7 @@ footer {
 
 @media (max-width: 375px) {
   .slider {
-    height: 40vh;
+    height: 75vw;
   }
 
   .round {
@@ -328,11 +344,30 @@ footer {
 
   .img-wrapper {
     border-radius: 0.75rem;
-    height: 26vh;
+    height: 42.1875vw;
   }
 
   .slides img {
     border-radius: 0.75rem;
-    height: 25vh;
+    height: 42.1875vw;
   }
+
+  .slider > .container {
+    height: 20vw;
+  }
+
+  #radio2:checked ~ .container .mem-title2 {
+    opacity: 1;
+    margin-top: -7.2rem;
+  }
+  #radio3:checked ~ .container .mem-title3 {
+    opacity: 1;
+    margin-top: -14.5rem;
+  }
+  #radio4:checked ~ .container .mem-title4 {
+    opacity: 1;
+    margin-top: -22rem;
+  }
+
+
 }
